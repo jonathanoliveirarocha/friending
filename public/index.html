@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friending</title>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body class="h-screen flex justify-center items-center bg-gray-600">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="h-screen flex justify-center items-center bg-gray-600 p-2">
     <div
-      class="relative w-3/4 h-3/4 lg:w-2/4 bg-gray-900 rounded-lg shadow-2xl p-4"
+      id="registatrion"
+      class="bg-gray-900 py-16 px-4 rounded-lg shadow-2xl relative"
+    >
+    <div>
+      <label for="username" class="text-gray-300 leading-8">Digite seu nome de usuário: </label>
+      <input type="text" id="username" name="username" placeholder="Usuário"  class="w-full relative py-1 pl-2 rounded-md bg-gray-300"/>
+      <button class="absolute right-0 mx-5 bg-gray-500 my-1 px-2 rounded-md text-gray-100" id="regUserBtn" disabled>
+        Salvar
+      </button>
+    </div>
+    </div>
+    <div
+      id="chatMessage"
+      class="relative w-full h-3/4 lg:w-2/4 bg-gray-900 rounded-lg shadow-2xl p-4 hidden"
     >
       <div
-        class="bg-gray-500 m-4 rounded-lg absolute right-0 left-0 bottom-12 top-0"
+        class="bg-gray-1000 m-4 rounded-lg absolute right-0 left-0 bottom-12 top-0 overflow-auto" id="messagesDiv"
       >
-        <ul id="messages"></ul>
-    </div>
+        <ul id="messages" class="h-full w-full">
+        </ul>
+      </div>
       <div class="absolute flex w-full bottom-0 right-0 my-4 px-4">
         <form action="" class="w-full">
-          <input class="bg-gray-50 w-full relative" type="text" id="input"/>
-          <button class="absolute right-0 mx-6">Enviar</button>
+          <input
+            class="w-full relative py-1 pl-2 rounded-md bg-gray-300"
+            placeholder="Seu texto aqui..."
+            type="text"
+            id="input"
+          />
+          <button
+            id="submit"
+            class="absolute right-0 mx-5 bg-gray-500 my-1 px-2 rounded-md text-gray-100"
+            disabled
+          >
+            Enviar
+          </button>
         </form>
       </div>
     </div>
+    <style>
+        #messagesDiv::-webkit-scrollbar {
+          width: 0;
+        }
+        #messagesDiv {
+          scrollbar-width: none;
+        }    
+      </style>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/main.js"></script>
-  </body>
 </html>
+
+
+
