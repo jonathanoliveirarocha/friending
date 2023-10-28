@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friending</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="h-screen flex justify-center items-center bg-gray-600">
+    <div
+      class="relative w-3/4 h-3/4 lg:w-2/4 bg-gray-900 rounded-lg shadow-2xl p-4"
+    >
+      <div
+        class="bg-gray-500 m-4 rounded-lg absolute right-0 left-0 bottom-12 top-0"
+      >
+        <ul id="messages"></ul>
+    </div>
+      <div class="absolute flex w-full bottom-0 right-0 my-4 px-4">
+        <form action="" class="w-full">
+          <input class="bg-gray-50 w-full relative" type="text" id="input"/>
+          <button class="absolute right-0 mx-6">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
