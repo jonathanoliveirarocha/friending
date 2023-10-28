@@ -58,6 +58,7 @@ form.addEventListener("submit", (e) => {
   input.value = "";
   submit.disabled = true;
   submit.classList.remove("bg-green-500");
+  submit.classList.remove("hover:bg-green-700");
   submit.classList.add("bg-gray-500");
 });
 
