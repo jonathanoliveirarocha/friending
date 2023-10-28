@@ -1,9 +1,11 @@
 const username = document.querySelector("#username");
 const regUserBtn = document.querySelector("#regUserBtn");
 let user;
+let userID;
 
 const saveUser = () => {
   user = username.value;
+  userID = crypto.randomUUID();
   document.querySelector("#registatrion").classList.add("hidden");
   document.querySelector("#chatMessage").classList.remove("hidden");
 };
@@ -54,7 +56,7 @@ const messagesDiv = document.querySelector("#messagesDiv");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  socket.emit("chat message", [user, input.value]);
+  socket.emit("chat message", [user, input.value, userID]);
   input.value = "";
   submit.disabled = true;
   submit.classList.remove("bg-green-500");
@@ -64,7 +66,7 @@ form.addEventListener("submit", (e) => {
 
 socket.on("chat message", (msg) => {
   const item = document.createElement("li");
-  if (msg[0] === user) {
+  if (msg[0] === user && userID === msg[2]) {
     item.innerHTML = `
     <div class="mb-4 bg-green-500 p-2 w-4/5 lg:w-3/5 rounded-md float-right">
       <p class="text-red-800 font-semibold">${msg[0]}:</p>
