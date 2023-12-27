@@ -2,12 +2,12 @@
 
 **Accessible project link: <a href="https://friending.onrender.com/">Friending</a>**
 
-## Summary:
+## Summary
 
 1. [What it is](#what-it-is)
 2. [Running the application locally](#running-the-application-locally)
 
-## What it is :
+## What it is
 
 The program is a real-time chat application using WebSockets. It is a chat without authentication, so everyone can use it easily, with the aim of meeting random people and making friends, just enter the user name and use it.
 
@@ -22,7 +22,7 @@ The program is a real-time chat application using WebSockets. It is a chat witho
 - socket.io
 
 
-## Running the application locally :
+## Running the application locally
 
 1. First, make sure you have <a href="https://nodejs.org/en">Node.js</a> installed on your machine.
 
